@@ -34,6 +34,8 @@ spec:
         ports:
         - containerPort: 50051
         env:
+        - name: DISABLE_PROFILER
+          value: "true"
         - name: PORT
           value: "50051"
         - name: NODE_IP
@@ -55,8 +57,8 @@ spec:
             cpu: 50m
             memory: 64Mi
           limits:
-            cpu: 50m
-            memory: 128Mi
+            cpu: 500m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
